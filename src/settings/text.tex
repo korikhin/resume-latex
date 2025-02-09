@@ -1,0 +1,23 @@
+\usepackage{fontspec}
+\usepackage[default, light]{raleway} % Font
+\usepackage{microtype}
+\usepackage{setspace}
+%\usepackage{indentfirst}
+
+% Nullify defaults for better control
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\onehalfspacing
+
+\usepackage{xcolor}
+
+\definecolor{primary}{RGB}{51, 51, 51}
+\definecolor{secondary}{RGB}{150, 150, 150}
+\definecolor{accent}{RGB}{220, 55, 70}
+
+\newcommand{\primaryText}[1]{\textcolor{primary}{#1}}
+\newcommand{\secondaryText}[1]{\textcolor{secondary}{#1}}
+\newcommand{\accentText}[1]{\textcolor{accent}{#1}}
+
+\color{primary} % Font color

@@ -1,0 +1,79 @@
+\newlength{\vspacelengthDefault}
+\setlength{\vspacelengthDefault}{1ex plus .2ex}
+
+\newcommand{\vspaceDefault}{\vspace{\vspacelengthDefault}}
+
+\newlength{\hspacelengthDefault}
+\setlength{\hspacelengthDefault}{.5em plus .2em minus .2em}
+
+\newcommand{\hspaceDefault}{\hspace{\hspacelengthDefault}}
+
+\newlength{\parindentlengthDefault}
+\setlength{\parindentlengthDefault}{1em plus .2em}
+
+\newcommand{\asterisksep}{\hspaceDefault\textasteriskcentered\hspaceDefault}
+
+% Work experience and education degrees.
+% Usage:
+%   \experience%
+%       [Description]
+%       {Job Title/Degree}
+%       {Company/Institute}
+%       {Dates}
+%
+% Result:
+%   Designation * Company (Description) ... Dates
+\newcommand{\experience}[4][]{
+    \phantomsection
+    \addcontentsline{toc}{subsection}{#3, #2}
+
+    \noindent
+    \makebox[\textwidth]{%
+        {\bfseries #2}%
+        \asterisksep%
+        #3%
+        \ifx&#1&%
+           % Do nothing
+        \else
+           \hspaceDefault{\itshape\secondaryText{(\,#1\,)}}
+        \fi
+        \hfill%
+        {\itshape\secondaryText{#4}}%
+    }%
+    \par%
+}
+
+% Resources.
+% Usage:
+%   \resource%
+%       [URL]
+%       {Title}
+%       {Dates}
+%
+% Result: Name (link) ... Dates
+\newcommand{\resource}[3][]{
+    \phantomsection
+    \addcontentsline{toc}{subsection}{#2}
+
+    \noindent
+    \makebox[\textwidth]{%
+        #2%
+        \ifx&#1&%
+            % Do nothing
+        \else
+            \hspaceDefault{\itshape(\,\href{#1}{link}\,)}%
+        \fi%
+        \hfill%
+        {\itshape\secondaryText{#3}}%
+    }%
+    \par%
+}
+
+\newcommand{\continuedOnNextPage}{
+	\noindent\makebox[\textwidth]{%
+		\accentText{%
+			$\cdots$\hspaceDefault\textsc{continued on next page}\hspaceDefault$\cdots$%
+		}%
+	}%
+	\par%
+}

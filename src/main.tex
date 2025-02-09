@@ -1,0 +1,33 @@
+\documentclass[11pt, a4paper]{extarticle}
+\usepackage{import}
+
+\import{./settings/}{meta.tex}  % Document information
+\import{./settings/}{text.tex}  % Text and font
+\import{./settings/}{style.tex} % Styles and formatting
+\import{./settings/}{utils.tex} % Utilities
+
+\begin{document}
+	% Header
+	\import{./sections/}{header.tex}
+
+	\vspaceDefault
+	\hrule
+
+	% Summary
+	\import{./sections/}{summary.tex}
+
+	% Skills
+	\import{./sections/}{skills.tex}
+
+	% Experience
+	\import{./sections/}{exp.tex}
+
+	% Education
+	\import{./sections/}{edu.tex}
+
+	% Certification
+	\import{./sections/}{cert.tex}
+
+	\continuedOnNextPage
+
+\end{document}

@@ -1,0 +1,38 @@
+\usepackage{geometry}
+\usepackage{emptypage}
+
+\geometry{margin=12mm}
+\pagestyle{empty}
+
+\usepackage{titlesec} % Sections
+
+\titleformat{\section}
+	{\normalfont\Large\bfseries\color{accent}}
+	{}{0em}{}
+
+\titlespacing*{\section}
+	{0pt}
+	{2\vspacelengthDefault}
+	{\vspacelengthDefault}
+
+\usepackage{enumitem} % Lists
+
+% Entries (e.g. Experience or Education)
+\setlist[itemize]{
+    leftmargin=0pt,
+    label={},
+    nosep,
+    itemsep=2\vspacelengthDefault,
+    before=\relax,
+    after=\relax,
+}
+
+% Subentries (e.g. Designation responsibilities)
+\setlist[itemize, 2]{
+	leftmargin=\parindentlengthDefault,
+	labelsep=\hspacelengthDefault,
+	label=\textasteriskcentered,
+	nosep,
+	topsep=\vspacelengthDefault,
+	%rightmargin=.2\linewidth, % Adjust for your needs
+}
