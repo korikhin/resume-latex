@@ -1,0 +1,13 @@
+# Ignore everything
+*
+
+# ...but
+
+!README.md
+!LICENSE
+
+!*.tex
+!/examples/*.pdf
+
+# ...even if they are in subdirectories
+!*/

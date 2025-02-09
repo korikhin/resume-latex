@@ -1,0 +1,73 @@
+\newcommand{\asterisksep}{%
+    \hspaceDefault\textasteriskcentered\hspaceDefault%
+}
+
+% Work experience and education degrees. Usage:
+%   \experience%
+%       [Description] % Omit if none
+%       {Designation/Institute}
+%       {Company/Degree}
+%       {Dates}
+%
+%   Result:
+%       Designation * Company (Description) ... Dates
+\newcommand{\experience}[4][]{
+    \phantomsection
+    \addcontentsline{toc}{subsection}{#3, #2}
+
+    \noindent
+    \makebox[\textwidth]{%
+        {\bfseries #2}%
+        \asterisksep%
+        #3%
+        \ifx&#1&%
+           % Do nothing
+        \else
+           \hspaceDefault{\itshape\secondarytext{(\,#1\,)}}
+        \fi
+        \hfill%
+        {\itshape\secondarytext{#4}}%
+    }%
+    \par%
+}
+
+% Resources. Usage:
+%   \resource%
+%       [URL]   % Omit if none
+%       {Title}
+%       {Dates}
+%
+%   Result: Name (link) ... Dates
+\newcommand{\resource}[3][]{
+    \phantomsection
+    \addcontentsline{toc}{subsection}{#2}
+
+    \noindent
+    \makebox[\textwidth]{%
+        #2%
+        \ifx&#1&%
+            % Do nothing
+        \else
+            \hspaceDefault{\itshape(\,\href{#1}{link}\,)}%
+        \fi
+        \hfill%
+        {\itshape\secondarytext{#3}}%
+    }%
+    \par%
+}
+
+\newcommand{\pagedivider}[1]{
+	\noindent
+	\makebox[\textwidth]{%
+		\color{accent}
+		$\cdots\cdots$%
+		\hspaceDefault%
+		\textsc{#1}%
+		\hspaceDefault%
+		$\cdots\cdots$%
+	}%
+	\par%
+}
+
+\newcommand{\seenextpage}{\pagedivider{see on the next page}}
+\newcommand{\pagecontinue}{\pagedivider{continuation}}
